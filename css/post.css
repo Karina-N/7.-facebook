@@ -1,0 +1,9 @@
+.post {
+    margin-bottom: 20px;
+<<<<<<< HEAD
+    border: 1px solid #ccc;
+=======
+    border: 1px solid grey;
+>>>>>>> ed23cf842289bfdb6b7bf8506e88e28a177c5d3c
+    padding: 20px;
+}
