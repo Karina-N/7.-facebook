@@ -5,3 +5,13 @@ renderPosts(posts);
 
 
 
+/*
+
+renderPosts()
+    for -> renderSinglePost()
+            renderHeader()
+            renderContent()
+                renderContentText()
+                renderContentGallery()
+            renderFooter()
+*/
