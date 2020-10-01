@@ -1,7 +1,6 @@
 function renderPosts(data) {
     // validacija. pirma patikrinam ar data yra teisingai pateikta/formatas
 
-
     // logika, kuri generuoja turini
     let HTML = '';
 
@@ -31,7 +30,6 @@ function renderPosts(data) {
     // i ta elementa ikeliame HTML kintamojo reiksme
     console.log(feedDOM.innerHTML);
 
-    feedDOM.innerHTML = HTML;
-}
+    feedDOM.innerHTML = HTML;}
 
 export default renderPosts;
