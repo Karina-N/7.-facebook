@@ -6,7 +6,6 @@ renderPosts(posts);
 
 
 /*
-
 renderPosts()
     for -> renderSinglePost()
             renderHeader()

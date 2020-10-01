@@ -5,8 +5,8 @@ import renderFooter from './renderFooter.js';
 function renderSinglePost(data) {
 
     return `<div class="post">
-            ${renderHeader()}
-            ${renderContent()}
+            ${renderHeader(data.author, data.postTimestamp)}
+            ${renderContent(data.content)}
             ${renderFooter()}
             </div>`;
 }

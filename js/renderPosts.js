@@ -20,7 +20,7 @@ function renderPosts(data) {
     console.log(feedDOM);
 
     // i ta elementa ikeliame HTML kintamojo reiksme
-    console.log(feedDOM.innerHTML);
+    // console.log(feedDOM.innerHTML);
 
     feedDOM.innerHTML = HTML;
 }
