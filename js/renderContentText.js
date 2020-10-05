@@ -5,7 +5,7 @@ function renderContentText(text) {
         }
 
     // logika
-    if (text.length < 61) {
+    if (text.length < 61) { 
         return `<p class="big-size">${text}</p>`;
     } else if (text.length < 301) {
         return `<p>${text}</p>`;
