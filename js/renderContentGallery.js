@@ -6,16 +6,25 @@ function renderContentGallery (data) {
     }
 
     //logika
-
-
+    const maxGallerySize = 4;
+    const totalPhotoCount = data.length;
+    const visiblePhotoCount = totalPhotoCount > maxGallerySize ? maxGallerySize : totalPhotoCount;
 
     let imagesHTML = '';
-    for (let i=0; i < data.length; i++) {
-        imagesHTML += `<img src="./img/posts/${data[i]}" alt="User  post gallery picture">`;
+    for (let i=0; i < visiblePhotoCount; i++) {
+        imagesHTML += `<img src="./img/posts/${data[i]}" alt="User post gallery picture">`;
 
     }
-        return `<div class="gallery gallery-${data.length}">
+
+
+    let extraHTML = '';
+    if (totalPhotoCount > maxGallerySize) {
+        extraHTML = `<div class="extra">+${totalPhotoCount - maxGallerySize}</div>`;
+    }
+
+        return `<div class="gallery gallery-${visiblePhotoCount}">
                     ${imagesHTML}
+                    ${extraHTML}
                 </div>`;
 
 }

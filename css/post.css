@@ -43,6 +43,7 @@
     .post > .content > .gallery {
         display: inline-block;
         width: 100%;
+        position: relative;
         /* height: 300px; */
     }
 
@@ -86,6 +87,21 @@
             }
                 .post > .content > .gallery.gallery-4 > img:first-of-type {
                     height: 100%;
+                }
+
+                .post > .content > .gallery > .extra {
+                    display: inline-block;
+                    width: 50%;
+                    height: calc(100% / 3);
+                    background-color: #000c;
+                    color: #fff;
+                    font-size: 40px;
+                    text-align: center;
+                    line-height: 147px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+
                 }
 
 .post > footer  {
