@@ -10,21 +10,28 @@ function renderContentGallery (data) {
     const totalPhotoCount = data.length;
     const visiblePhotoCount = totalPhotoCount > maxGallerySize ? maxGallerySize : totalPhotoCount;
 
-    let imagesHTML = '';
-    for (let i=0; i < visiblePhotoCount; i++) {
-        imagesHTML += `<img src="./img/posts/${data[i]}" alt="User post gallery picture">`;
-
+    let extraAttribute = '';
+    if (totalPhotoCount > maxGallerySize) {
+        extraAttribute = `data-extra="${totalPhotoCount - maxGallerySize}"`;
     }
 
+    let imagesHTML = '';
+    for (let i=0; i < visiblePhotoCount; i++) {
+        if (i === visiblePhotoCount-1) {
+            imagesHTML +=   `<div class="img" ${extraAttribute}>
+                                <img src="./img/posts/${data[i]}" alt="User post gallery picture">
+                            </div>`; 
 
-    let extraHTML = '';
-    if (totalPhotoCount > maxGallerySize) {
-        extraHTML = `<div class="extra">+${totalPhotoCount - maxGallerySize}</div>`;
+        } else {
+            imagesHTML +=   `<div class="img">
+                            <img src="./img/posts/${data[i]}" alt="User post gallery picture">
+                        </div>`;
+        }
+
     }
 
         return `<div class="gallery gallery-${visiblePhotoCount}">
                     ${imagesHTML}
-                    ${extraHTML}
                 </div>`;
 
 }

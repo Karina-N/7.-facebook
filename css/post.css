@@ -43,25 +43,31 @@
     .post > .content > .gallery {
         display: inline-block;
         width: 100%;
-        position: relative;
+        
         /* height: 300px; */
     }
 
-        .post > .content > .gallery > img {
+        .post > .content > .gallery > .img {
             display: inline-block;
             width: 100%;
             height: 100%;
-            float: left;
+            float: left; 
+            position: relative;
+        }
+
+        .post > .content > .gallery > .img > img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
             object-position: center;
             object-fit: cover;
-            
         }
 
         .post > .content > .gallery.gallery-2 {
             height: 360px;
         }
 
-        .post > .content > .gallery.gallery-2 > img {
+        .post > .content > .gallery.gallery-2 > .img {
             width: 50%;
         }
 
@@ -69,11 +75,11 @@
             height: 400px;
         }
 
-        .post > .content > .gallery.gallery-3 > img {
+        .post > .content > .gallery.gallery-3 > .img {
             width: 50%;
             height: 50%;
         }
-            .post > .content > .gallery.gallery-3 > img:first-of-type {
+            .post > .content > .gallery.gallery-3 > .img:first-of-type {
                 width:100%;
             }
 
@@ -81,26 +87,28 @@
             height: 400px;
         }
 
-            .post > .content > .gallery.gallery-4 > img {
+            .post > .content > .gallery.gallery-4 > .img {
                 width: 50%;
                 height: calc(100% / 3);
             }
-                .post > .content > .gallery.gallery-4 > img:first-of-type {
+                .post > .content > .gallery.gallery-4 > .img:first-of-type {
                     height: 100%;
                 }
 
-                .post > .content > .gallery > .extra {
-                    display: inline-block;
-                    width: 50%;
-                    height: calc(100% / 3);
-                    background-color: #000c;
-                    color: #fff;
-                    font-size: 40px;
-                    text-align: center;
-                    line-height: 147px;
+                .post > .content > .gallery > .img[data-extra]::before  {
+                    /* [] -> lauztiniam skliauste rasomas atributo pavadinimas */
+                    content: '+'attr(data-extra);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     position: absolute;
                     bottom: 0;
                     right: 0;
+                    top: 0;
+                    left: 0;
+                    background-color: #000c;
+                    color: #fff;
+                    font-size: 40px;
 
                 }
 
@@ -108,4 +116,22 @@
     padding: 10px;
 }
 
+/* PAVYZDYS 
+---> pseudo elementas naudojamas kad nekurti
+    papildomo <div> aplink teksta ar elementa. 
+    Ji gali tureti bet kuris elementas kuris turi
+    uzdaranti ir atidaranti tag'a
+:: --> dvitaskis sukuria pseudo elementus
+.messenger::before {
+    display: inline-block; ---> arba display: block;
+    content: '';  ---> privaloma eilute kuriant pseudo elementa.
+                    mes patys turim nurodyti elemento turini(dydi),
+                    minimum tuscias tekstas
+    width:
+    height: 
+}
+
+.mesenger::after {
+}
+*/
     
